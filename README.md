@@ -20,6 +20,7 @@ ___________________________________
  - Press "Sing In" button
 
 User on the "Sing In" screen and has account 
+
  |Action|Expected result|
 |--------|---------------|
 |Enter incorrect email|"Email is invalid"  tip ahould appear|
@@ -31,6 +32,7 @@ User on the "Sing In" screen and has account
 |Enter correct email and password, press "Sign In" button| User should be logged into his account and redirected to the "Library" screen, all added to the account books should appear in the library. User's email should display instead of "Sing In" button should displayed on the "Settings" screen|
 
 User on the "Sing In" screen and hasn't account 
+
  |Action|Expected result|
 |--------|---------------|
 |Press "Create na account" button|User should be redirected to the "Sing Up" screen|
@@ -39,6 +41,7 @@ User on the "Sing In" screen and hasn't account
 |Enter correct email and twice password, press "Sign Up" button|New account should be created and user should be redirected to the empty "Library" screen. User's email should display instead of "Sing In" button should displayed on the "Settings" screen|
 
 User on the "Sing In" screen and has accountbut forgot the password
+
  |Action|Expected result|
 |--------|---------------|
 |Press "Forgot Password?" button|User should be redirected to the "Forgot Password?" screen|
@@ -58,10 +61,520 @@ __________________________________________________
  - Press "Sing In" button
  - Press "Sign In with Google" button
 
+No accounts added before case
+
+ |Action|Expected result|
+|--------|---------------|
+|Press "Sign in with Google" button|User should be redirected to the "Google Sing in" screen in inApp browser|
+|Enter valid account data|InApp Browser closed, user returned to "Library" screen|
+|User Enter invalid account data|User got error message|
+
+User has google account/s connected to phone 
+
+ |Action|Expected result|
+|--------|---------------|
+|Press 'Sign in with Google' button|"Choose an account to continue to Speechify" should appear|
+|Press "Back" button|"Choose an account to continue to Speechify" should disappear|
+|User chooses account|User is signed in and redirected to the "Library" screen|
+|Press "Add another account" button|User should be redirected to the "Google Sing in" screen in inApp browser|
+|Press "Privacy Policy/Terms of service" button|User should be redirected to the "Privacy Policy/Terms of service" screen in to the browser|
+### Acceptance Criteria 
+ - User can Sign In/Up vie Google
+______________________________
+# As User I can Import files from Google Drive
+
+### Steps
+ - Launch app
+ - Open "Import" screen
+
+No accounts added before case
+
+ |Action|Expected result|
+|--------|---------------|
+|Press "Google Drive" button|User should be redirected to the "Google Sing in" screen in inApp browser|
+|Enter valid account data|InApp Browser closed, user redirrected to custom drive screen|
+|User Enter invalid account data |User got error message |
+
+User has google account/s connected to phone 
+
+| Action | Expected result |
+| ------ | ------ |
+|Press 'Sign in with Google' button|"Choose an account to continue to Speechify" should appear|
+|Press "Back" button|"Choose an account to continue to Speechify" should disappear|
+|User chooses account|User redirrected to custom drive screen|
+|User Enter invalid account data |User got error message |
+
+Choose any file of supported format 
+
+|Action| Expected result |
+| ------ | ------ |
+|User choose file of supported format|User should be redirected to the "Crop" screen|
+|Press "Create" button|User should be redirected to the "Library" screen and book should be imported|
+### Acceptance Criteria 
+ - All supported format files can be imported and listened after it 
+_________________________
+# As user I can import files from Dropbox
+
+### Steps
+ - Launch app
+ - Open "Import" screen
+
+User doesn't have Dropbox App installed, doesn't have account connected case:
+
+| Action | Expected result |
+| ------ | ------ |
+| Choose Dropbox | Dropbox 'Sign In' screen in InApp browser appears |
+| Enter valid account data| User redirrected to custom dropbox screen  |
+| User Enter invalid account data | User got error message |
+
+User doesn't have Dropbox App installed, has account connected case:
+
+| Action| Expected result |
+| ------ | ------ |
+| Choose Dropbox | User redirrected to custom dropbox screen |
+
+User has Dropbox App installed, doesn't have account connected case:
+
+| Action| Expected result |
+| ------ | ------ |
+| Choose Dropbox | User redirrected to the "Sign In" screen in Dropbox app |
+| Enter valid account data| User redirrected to custom dropbox screen  |
+| User Enter invalid account data | User got error message |
+
+User has Dropbox App installed, has account connected case:
+
+| ------ | ------ |
+| Choose Dropbox | User redirrected to custom dropbox screen |
+
+Choose any file of supported format: 
+
+|Action| Expected result |
+| ------ | ------ |
+|User choose file of supported format|User should be redirected to the "Crop" screen|
+|Press "Create" button|User should be redirected to the "Library" screen and book should be imported|
+
+### Acceptance Criteria 
+ - All supported format files can be imported and listened after it 
+_________________________
+# As user I can import files from OneDrive
+### Steps: 
+ - Launch app
+ - Open "Import" screen
+
+ No accounts added before case:
+
+  | Action| Expected result |
+| ------ | ------ |
+| Choose Dropbox | Dropbox 'Sign In' screen in InApp browser appears |
+| Enter valid account data| User redirrected to custom dropbox screen  |
+| User Enter invalid account data | User got error message |
+
+User has google account/s connected to phone:
+
+  | Action| Expected result |
+| ------ | ------ |
+| Choose OneDrive | User redirrected to custom drive screen |
+
+Choose any file of supported format: 
+
+|Action| Expected result |
+| ------ | ------ |
+|User choose file of supported format|User should be redirected to the "Crop" screen|
+|Press "Create" button|User should be redirected to the "Library" screen and book should be imported|
+
+### Acceptance Criteria 
+ - All supported format files can be imported and listened after it 
+_________________________
+# As user I can import files from Local Files
+
+### Steps
+ - Launch app
+ - Open "Import" screen
+
+|Action| Expected result |
+| ------ | ------ |
+|Press "Local Files" button|Permisson popup should appear|
+|Press "Deny" button|Permisson popup is disappeared and user should be redirected to the "Import" screen|
+|Press "Accept" button|User should be redirected to the custom local files screen|
+
+Choose any file of supported format: 
+
+|Action| Expected result |
+| ------ | ------ |
+|User choose file of supported format|User should be redirected to the "Library" screen and book should be imported|
+
+### Acceptance Criteria 
+ - All supported format files can be imported and listened after it 
+_______________________
+# As user I can import articles from browsers using share function
+
+### Steps
+  - Install App
+  - Open article in browser
+  - Press Share button 
+  - Choose Speechify (If not used before it is in 'more' list)
+
+| Action| Expected result |
+| ------| ------ |
+|Tap anywhere|Share popup should disappeared|
+|Press "Listen Later" button|Article saved to the library|
+|Press "Listen now" button| User should be redirected to the library and popup fro saving shared article should appeared|
+|Press "x" button| Popup with shared article should disaapeared and article should not be added to the library|
+|Press "Import to library" button| Popup with shared article should disaapeared and article should be added to the library|
+
+ ### Acceptance Criteria 
+ - User can import any articles from browser
+ - importing should be within max 1min even on low internet connection. If it takes more time, it should mark the file as failed.
+____________________
+# As user I can import text from third-party applications (notes / other notes-taking app)
+
+### Steps:
+ - Open any note-taking app;
+ - Press Share button on the note, you want to import;
+ - Choose Speechify (If not used before it is in 'more' list);
+
+|Action| Expected result |
+| ------ | ------ |
+|Tap anywhere|Share popup should disappeared|
+|Press "Listen Later" button|Article saved to the library|
+|Press "Listen now" button| User should be redirected to the library and popup fro saving shared article should appeared|
+|Press "x" button| Popup with shared article should disaapeared and article should not be added to the library|
+|Press "Import to library" button| Popup with shared article should disaapeared and article should be added to the library|
+
+### Acceptance Criteria 
+ - User can import any articles from browser
+ - importing should be within max 1min even on low internet connection. If it takes more time, it should mark the file as failed.
+ ______________________
+# As User I can import article via coping and pasting link
+
+### Steps
+ - Install
+ - Open any articles in the browser
+ - Copy link of the article
+
+|Action| Expected result |
+| ------ | ------ |
+|Launch app|Import arctile popup should appear|
+|Press "x" button| Popup with shared article should disaapeared and article should not be added to the library|
+|Press "Import to library" button| Popup with shared article should disaapeared and article should be added to the library|
+
+### Acceptance Criteria 
+ - User can import any articles from browser
+ - importing should be within max 1min even on low internet connection. If it takes more time, it should mark the file as failed.
+ ___________________________
+# As user I can create the list of my favourite sites
+
+### Steps
+ - Launch app
+ - Open "Import" screen
+ - Press "Article" button
+
+|Action| Expected result |
+| ------ | ------ |
+|Press "+" button|"Enter website URl" popup should appear|
+|Press "Cancel" button|"Enter website URl" popup should disappear|
+|Enter URL of website and press "Add" button|Site should be added to the list|
+
+### Acceptance Criteris
+ - User shoould be abble to add his favourite sites to the list
+_____________________________
+# As user I can can access inApp browser so that i can search and import articles 
+
+### Steps
+ - Launch app
+ - Open "Import" screen
+ - Press "Article" button 
+
+|Action| Expected result |
+| ------ | ------ |
+|Tap on the search field|USer should be able to enter text into the search field|
+|Enter text in the search field and press "Search" button|Founed articles should display in the inApp browser|
+|Press "x" button|innApp browser should close and User should be redirected to the "Article" screen|
+|Tap on the one of the founded articles and press "Speechify This" button|User should be redirected to the library and article should be added to the library|
+
+### Acceptance Criteria 
+ - User can import any articles from inApp browser
+ - importing should be within max 1min even on low internet connection. If it takes more time, it should mark the file as failed.
+____________________________________
+# As User I can access crop menu for imported file from cloud service
+
+### Steps:
+ - Import file from any cloud-service 
+ - Crop file 
+ - Press 'Create' button
+ ### Acceptance Criteria 
+ - User can open crop menu, crop file according to his preferences and add cropped file to library
+_______________________________________
+# As user I can open 'Text' screen, where I can create my own document
+
+### Steps: 
+ - Open 'Text' Screen 
+  Expected result: Screen with such options appear : 
+ - Document title field
+ - Text field 
+ - Listen button 
+ - Paste button
+ - Add To Library button
+ ### Acceptance Criteria 
+ - User can open Text screen, all core features can be accessed and are working properly
+_______________________________________
+# As User I can create text, using 'Text' screen
+
+### Steps
+ - Open "Text" screen
+
+  | Action| Expected result |
+| ------ | ------ |
+| Click on 'Document title' field | Cursor is on 'Document title' field, keyboard appears |
+| Set name for your document | Appropriate text is typed and shown. Any symbols allowed |
+| Click Done  | Keyboard disappears, name, that was set is shown |
+| User click 'Listen now' | Article saved to chosen folder, Browser goes to background mode, User redirected to Library screen in Sceechify App |
+| Click on 'text' field | Cursor is on 'text' field, keyboard appears |
+| Type any text | Appropriate text is typed and shown. Any symbols allowed |
+| Click Done  | Keyboard disappears, text, that was typed is shown |
+| User has text copied to clipboard | Paste button is active|
+| Click 'Paste' button | Text, that was in clipboard is pasted to 'text' field|
+| Click 'Listen' button | User should be able to dictate|
+| Click 'Add To Library button' button | New document in Library is created ( in chosen folder, root is default) Title is given either by user ( 'Document title' field) Or if it was empty, title is automaticly made from beginning of the text|
+
+ ### Acceptance Criteria 
+ - User can set name for his document
+ - User can paste text into his document
+ - User can add to library dicument, he created
+ _______________________________
+# As User I can see list of items I added before so that I am able to listen to all of them 
+
+### Steps:
+ - Launch App
+ - Open Library 
+ 
+ Expected result: User can see list of previously added items 
+
+ ### Acceptance Criteria 
+ - Library screen successfully opens, all items that were previously added can be seen and accessed
+____________________________
+# As User I can Create Folder inside my library  
+
+### Steps
+ - Launch app
+ - Open "Library" screen
+
+|Action| Expected result |
+| ------ | ------ |
+|Press "Create new folder" button|"New folder" popup should appear|
+|Press "Cancel" button|"New fodler" popup should disappear|
+|Press "OK" button and don't enter title of the folder|Folder with default title should be added to the library|
+|Enter title of the folder and press "OK" button|Folder with entered title should be added to the library|
+
+ ### Acceptance Criteria 
+ - Folder can be created and named 
+ - Folder appears inside appropriate folder 
+________________________________
+# As User I can Delete Books/Articles/Texts/Folders I added before
+
+### Steps
+ - Launch app
+ - Open Library screen
+  - Tap on three dots icon near any Item 
+ - Choose Delete 
+ Expected result: Appropriate item deleted from library
+
+ ### Acceptance Criteria 
+ - Appropriate item is deleted from Library
+________________________________________
+# As User I can Listen to  items I Added to Library before
+
+### Steps
+ - Launch App
+ - Open Library screen
+ - Tap on item to listen to 
+ 
+ Expected result: Listening started, appropriate text is highlighted 
+
+ ### Acceptance Criteria 
+ - User can open any book from Library and start listening to it 
+______________________________________
+# As User I can Pause and Continue listening via Pause/Play button 
+
+### Steps
+ - Start listening
+
+ | Action| Expected result |
+| ------ | ------ |
+| User press Pause | Listening Paused |
+| User press Play | Listening continues from where it stopped |
+ ### Acceptance Criteria 
+ - User can Press/pause his listening
+ - Listening continues from where it stopped 
+ - Play/Pause cause appropriate actions 
+_____________________________________
+# As User I can Skip n seconds Forward/Backwards via Pressing Skip buttons
+
+### Steps
+ - Start listening
+
+| Action| Expected result |
+| ------ | ------ |
+| User press Forward skip | Listening skips forward for n seconds, Appropriate text is highlighted, listening continues from appropriate point |
+| User press Backwards skip | Listening skips backwards for n seconds, Appropriate text is highlighted, listening continues from appropriate point |
+ ### Acceptance Criteria 
+ - User can skip listening for appropriate interwals
+ - Listening continues from appropriate point
+ _________________________
+# As User I can change speed of listening
+
+### Steps
+ - Start listening
+ - Press "Speed" button
+
+| Action| Expected result |
+| ------ | ------ |
+| User changes speed via dragging | Speed and time remaning indicator are appropriately changed, correct speed is shown  |
+| User changes speed via tapping | Speed and time remaning indicator are appropriately changed, correct speed is shown |
+| User changes speed via clicking '+' icon | Speed and time remaning indicator are appropriately changed, correct speed is shown  |
+| User changes speed via clicking '-' icon | Speed and time remaning indicator are appropriately changed, correct speed is shown |
+ N.B. : Speed changes apply only to book, you are listening to, other remain default
+ 
+ ### Acceptance Criteria 
+ - Speed can be changed 
+ - Appropriate speed is set after changing
+_____________________________
+# As User I can navigate through text via tapping on word, I would like to start listening from 
+
+### Steps
+ - Start listening
+ - Tap on any word in text you are listening
+ Expected result: Listening continues from appropriate word, appropriate word is highlighted
+
+ ### Acceptance Criteria 
+ - Naviagating throgh text via tapping is possible
+ - Nothing is changed except from listening position highlighting and listening poing
+_________________________________
+# As User I can Change Font Size
+ - Start listening
+ - Press "Display & Text Size" button
+
+ | Action| Expected result |
+| ------ | ------ |
+| User click uppercase letter | Font size gets bigger, user can click this letter untill he reaches limit, after that button becomes N/A  |
+| User click lowercase letter | Font size gets smaller, user can click this letter untill he reaches limit, after that button becomes N/A |
+ ### Acceptance Criteria 
+ - User can make font size bigger 
+ - User can make font size smaller 
+________________________________________
+# As User I can change voice/languages of listening
+
+### Steps
+ - Start listening
+ - Press "Voices & Languages" button
+
+| Action| Expected result |
+| ------ | ------ |
+|Tap on one of the voices from the list|Reading should continue with selected voice|
+|Tap on one of the languages from the list|Reading should continue with selected languages|
+|Press "x" button|"Voices & Languages" screen should be closed|
+
+  ### Acceptance Criteria 
+ - User can set any of avaliable for him listening voices/languages
+_______________________________________________
+#  As User I can continue listening from same point I stopped before
+
+### Steps
+ - Start listening
+
+### Acceptance Criteria 
+- After ANY actions, except from reinstalling an app and permanently deleting book user can continue listening from same point he stopped before
+_________________________________________________
+# As User I can Listen to text when App is in Background Mode 
+
+### Steps: 
+ - Start listening
+ - Put App in background mode 
+ Expected result: Listening continues 
+
+### Acceptance Criteria 
+ - User can continue listening to the book, when application is in background mode 
+________________________________________________
+# As User I can edit text
+
+### Steps:
+- Start listening 
+- Press "Display & Text Size" button
+- Press "Edit text" button
+
+ | Action| Expected result |
+| ------ | ------ |
+| User click on place in text, he wants to edit | Keyboard appears, cursor is at appropriate place |
+| User types some text | Typed text is shown |
+| User click 'Save' button| Changes are saved, user returned to default listening screen|
+| User click 'Cancel' button| Changes are undone, user returned to default listening screen |
+
+ ### Acceptance Criteria 
+ - User can make any changes he wants to text
+ - User can save changes, he made
+__________________________________________________
+# As User I can set default listening voice
+
+### Steps
+ - Open Settings screen
+ - Open Listening Preferences screen
+ - Press "Default Listening Language" button
+
+ | Action| Expected result |
+| ------ | ------ |
+| Click on search bar | Cursor is on serach bar, keyboard appears |
+| Type some text | Screen constantly refreshes, according to your searching query |
+| Choose any voice  | Voice is set by default |
+  ### Acceptance Criteria 
+ - User can set default listening voice
+________________________________________________
+# GENERAL FUNCTIONALITY 
+________________________________________________
+
+# All functionality can be accessed without signing In 
+User can make ANY of described above actions without signing in. Sign In is required ONLY for sync with your account, which is described below. 
+    
+# Sync functionality flow
+
+### User Sign Up 
+Expected result : Books sync with created account (Both added before AND Added after signing up). Synced books become avaliable on ANY platform, when user signs in into this account.
+    
+### User Sign In
+Expected result : Books sync with created account (Both added before AND Added after signing in). Books, that are already connected to this account, are added to library. Synced books become avaliable on ANY platform, when user signs in into this account.
+### User Log Out
+Expected result: All books, that were Synced with this account disappear from library. None of further added books will be synced with account, from which user signed out. All synced books must be accessed after repeated Sign In. 
+
+_____________________________________
+
+# When there is a copied Link or Text in Clipboard and user opens App pop-up appears to add this text/article to library
+Rough text case 
+ ## Steps: 
+ 1) Copy any text 
+ 2) Open Application 
+
+ | Action| Expected result |
+| ------ | ------ |
+| Open App | Text Detected pop-up appears |
+| Click 'Cross' button| pop-up closed, text not added to Library |
+| User click 'Create New File' button| pop-up closed, text added to Library |
+    
+Link case
+## Steps: 
+ 1) Copy link to an article   
+ 2) Open Application 
+ 
+  | Action| Expected result |
+| ------ | ------ |
+| Open App | Link Detected pop-up appears |
+| Click 'Cross' button| pop-up closed, article not added to Library |
+| User click 'Create New File' button| pop-up closed, article added to Library |
+ ### Acceptance Criteria 
+ - User gets proper pop-ups when he has link/text copied to clipboard 
+ - User can import article/text using those pop-ups
+
+
+ 
 
 
 
 
-
-As User I can go through Onboarding to get known with functionality of App.md
-As User I can go through Onboarding to get known with functionality of App.md. На экране.
