@@ -1,5 +1,5 @@
 # SPA 01 As User I can go through Onboarding to get known with functionality of App 
-
+[As User I can go through Onboarding to get known with functionality of App](#SPA-01-A- User-I-can-go-through-Onboarding-to-get known-with functionality-of-App)
 ### Steps
  - Luanch app
  - Onboarding [screen 1] (Welcome to Speechify) Press "I'm ready! Lets go!" button
